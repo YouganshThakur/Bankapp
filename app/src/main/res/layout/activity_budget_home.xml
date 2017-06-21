@@ -5,58 +5,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.inbuiltsolutions.bankapp.BudgetHome">
-    <android.support.design.widget.AppBarLayout android:layout_width="0dp"
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:elevation="4dp"
-            android:layout_height="56dp">
-            <ImageButton
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                app:srcCompat="?attr/homeAsUpIndicator"
-                android:background="@null"
-                android:onClick="go_back"
-                android:layout_gravity="left"
-                android:padding="13dp"
-                android:scaleType="fitXY"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:tabTextColor="@color/colorSecondary"
+        app:tabSelectedTextColor="@color/colorSecondary">
 
-                />
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-                android:layout_gravity="center"
-                android:textStyle="normal|bold"
-                android:textSize="35sp"
-                android:textAllCaps="false"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:text="VOTE"
-                android:textColor="#ffffff"/>
+        <android.support.design.widget.TabItem
+            android:id="@+id/incomes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INCOMES" />
 
-        </android.support.v7.widget.Toolbar>
+        <android.support.design.widget.TabItem
+            android:id="@+id/expenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXPENSES"
 
+            />
 
-
-    </android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.TabLayout>
     <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/chart1"
+        android:id="@+id/piechart"
         android:layout_width="0dp"
         android:layout_height="300dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/piechart"
+    android:id="@+id/linearlayout">
+    <LinearLayout
 
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Restaurant"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="45%"
+                android:gravity="right"
+                android:textSize="20dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1000rs"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:layout_marginRight="16dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="45%"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:layout_marginLeft="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="100rs"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:layout_marginRight="16dp"/>
+
+
+    </LinearLayout>
+</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

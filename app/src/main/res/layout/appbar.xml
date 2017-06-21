@@ -4,24 +4,42 @@
     android:theme="@style/AppTheme.AppBarOverlay"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        android:elevation="4dp"
-        android:layout_height="45dp">
-        <ImageView
-            android:layout_width="162dp"
-            android:layout_height="45dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="center"
-            android:src="@drawable/logo2"
 
-            />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:elevation="4dp"
+            android:layout_height="45dp">
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:srcCompat="?attr/homeAsUpIndicator"
+                android:background="@null"
+                android:onClick="go_back"
+                android:layout_gravity="left"
+                android:padding="13dp"
+                android:scaleType="fitXY"
 
-    </android.support.v7.widget.Toolbar>
+                />
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="center"
+                android:textStyle="normal|bold"
+                android:textSize="30sp"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Budget"
+                android:textColor="#ffffff"/>
+
+        </android.support.v7.widget.Toolbar>
 
 
 
-</android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.AppBarLayout>
